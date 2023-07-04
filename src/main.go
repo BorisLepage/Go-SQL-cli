@@ -20,18 +20,18 @@ func main() {
 
     err := validatePromptArgs(args)
     if err != nil {
-        fmt.Println("Erreur lors de la validation des arguments :", err)
+        fmt.Println("Error validating arguments:", err)
         return
     }
 
     db, err := connectToDatabase(args)
     if err != nil {
-        fmt.Println("Erreur lors de la connexion à la base de données :", err)
+        fmt.Println("Error connecting to the database:", err)
         return
     }
     defer db.Close()
 
-    fmt.Printf("Vous êtes connecté à la base de données %s\n", args.Database)
+    fmt.Printf("You are connected to the database %s\n", args.Database)
 }
 
 type PromptArgs struct {
